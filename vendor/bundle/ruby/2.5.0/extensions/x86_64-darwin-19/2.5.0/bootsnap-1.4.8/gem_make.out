@@ -1,0 +1,15 @@
+current directory: /Users/permz/Workdesk/careyou_0/careyou_09_06/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+/Users/permz/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200907-87250-lu4e8r.rb extconf.rb
+creating Makefile
+
+current directory: /Users/permz/Workdesk/careyou_0/careyou_09_06/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/permz/Workdesk/careyou_0/careyou_09_06/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/permz/Workdesk/careyou_0/careyou_09_06/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20200907-87250-1r2w3qe/bootsnap
