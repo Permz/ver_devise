@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "/" => "home#top"
+  get "/about" => "home#about"
+  get "/techs" => "home#techs"
+  get "/qanda" => "home#qanda"
+  get "/news" => "home#news"
+  
 end
