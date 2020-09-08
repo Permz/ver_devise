@@ -14,3 +14,7 @@
   <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
 <% end %>
 
+<% @questions.each do |q| %>
+  <hr>
+  <p><span>質問内容: </span><%=link_to question.title, question_path(question.id) %></p>
+<% end %>
