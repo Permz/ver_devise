@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]  # 「ログインしていないユーザーをログイン画面に送る」deviseのメソッド
+  # before_action :authenticate_user!, except: [:index]  # 「ログインしていないユーザーをログイン画面に送る」deviseのメソッド
   def new
     @question = Question.new
   end
@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
   def show
     @question = Question.find_by(params[:id])
-    @user = @question.user
+    # @user = @question.user
   end
   def create
     @question = Question.new(question_params)  # フォームから送られてきたデータ(title,index)をストロングパラメータを経由して@questionに代入

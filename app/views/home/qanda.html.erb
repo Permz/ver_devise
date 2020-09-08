@@ -1,6 +1,10 @@
 <h2>Q&A一覧</h2>
 
-<% @questions.each do |q| %>
-  <%= @q.title %>
-  <%= @q.index %>
+<% if @questions %>
+  <p>no content</p>
+<% else %>
+  <% @questions.each do |q| %>
+    <%= @q.title %>
+    <%= @q.index %>
+  <% end %>
 <% end %>
