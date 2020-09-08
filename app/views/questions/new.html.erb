@@ -1,13 +1,17 @@
 <h2>新規質問投稿</h2>
 
 <%= form_for @question do |f| %>
-  <div>
-    <%= f.label :title,"質問タイトル" %>
-    <%= f.text_field :title %>
+  <div class="container text-center">
+    <div>
+      <%= f.label :title,"質問タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :index,"質問内容" %>
+      <%= f.text_field :index %>
+    </div>
+    <div class="container text-center">
+      <%= f.submit %>
+    </div>
   </div>
-  <div>
-    <%= f.label :index,"質問内容" %>
-    <%= f.text_field :index %>
-  </div>
-  <%= f.submit %>
 <% end %>

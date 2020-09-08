@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/" => "home#top"
   get "/about" => "home#about"
   get "/techs" => "home#techs"
-  get "/qanda" => "questions#index"
+  get "/qanda" => "questions#show"
   get "/news" => "home#news"
   get "/login" => "home#login"
   get "/mng" => "home#management"
