@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
   root "home#top"
   get "/" => "home#top"
   get "/about" => "home#about"
@@ -9,6 +7,9 @@ Rails.application.routes.draw do
   get "/news" => "home#news"
   get "/login" => "home#login"
   get "/mng" => "home#management"
+  get 'users/index'
+  get 'users/show'
+  
   # post "home/guest_sign_in" => "home#new_guest"
   
   devise_for :users

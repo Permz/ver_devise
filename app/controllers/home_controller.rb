@@ -18,4 +18,6 @@ class HomeController < ApplicationController
   end
   def management
   end
+  def login
+  end
 end
