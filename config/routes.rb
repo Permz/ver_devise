@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "home#top"
   get "/" => "home#top"
   get "/about" => "home#about"
@@ -8,4 +7,5 @@ Rails.application.routes.draw do
   get "/news" => "home#news"
   get 'questions/index'
   
+  devise_for :users
 end
