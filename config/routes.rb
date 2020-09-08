@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/qanda" => "questions#index"
   get "/news" => "home#news"
   get "/login" => "home#login"
+  get "/mng" => "home#management"
   # post "home/guest_sign_in" => "home#new_guest"
   
   devise_for :users

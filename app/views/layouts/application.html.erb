@@ -35,6 +35,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Login</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/mng">管理</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -42,10 +45,6 @@
 <!-- 本文 始まり -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div>
-      <%= link_to "質問一覧", questions_path %>
-      <%= link_to "ユーザー一覧", users_path %>
-    </div>
     <div class="container">
       <%= yield %>
     </div>
