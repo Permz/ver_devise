@@ -8,9 +8,10 @@ class QuestionsController < ApplicationController
   end
   def show
     @question = Question.find_by(params[:id])
+    @user = @question.user
   end
   def create
-    @question = Question.new(question_params)  # フォームから送られてきたデータ(body)をストロングパラメータを経由して@questionに代入
+    @question = Question.new(question_params)  # フォームから送られてきたデータ(title,index)をストロングパラメータを経由して@questionに代入
     @question.user_id = current_user.id # user_idの情報はフォームからはきていないので、deviseのメソッドを使って「ログインしている自分のid」を代入
     @question.save
     redirect_to questions_path
