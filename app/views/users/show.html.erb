@@ -5,12 +5,13 @@
 <p><span>name: </span><%= @user.name %></p>
 <p><span>email: </span><%= @user.email %></p>
 
-<% if @questions %>
+<!--
+<% if @questions? %>
   <% @questions.each do |q| %>
     <hr>
     <p><span>質問タイトル: </span><%=link_to question.title, question_path(question.id) %></p>
     <p><span>質問内容: </span><%=link_to question.index, question_path(question.id) %></p>
-  <% end %>
 <% else %>
   <p>No content</p>
 <% end %>
+-->
