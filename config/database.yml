@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: careyou_09_06_development
+  database: careyou_0912_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: careyou_09_06_test
+  database: careyou_0912_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: careyou_09_06_production
-  username: careyou_09_06
-  password: <%= ENV['CAREYOU_09_06_DATABASE_PASSWORD'] %>
+  database: careyou_0912_production
+  username: careyou_0912
+  password: <%= ENV['CAREYOU_0912_DATABASE_PASSWORD'] %>
