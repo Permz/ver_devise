@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   def techs
   end
   def qanda
+    @questions = current_user.questions
   end
   def news
   end
