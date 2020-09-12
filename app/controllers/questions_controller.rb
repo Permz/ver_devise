@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
   def show
     @question = Question.find_by(params[:id])
-    # @user = @question.user
+    @user = @question.user
   end
   def create
     @question = Question.new(question_params)  # フォームから送られてきたデータ(title,index)をストロングパラメータを経由して@questionに代入

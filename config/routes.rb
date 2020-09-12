@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :answers
+ 
   root "home#top"
   get "/" => "home#top"
   get "/about" => "home#about"
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'users/show'
 
   devise_for :users
-  resources :questions
+  resources :questions do
+    resources :answers
+  end
   resources :users
 end

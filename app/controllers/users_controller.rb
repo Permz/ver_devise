@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(params[:id])
-    # @questions = @user.questions
+    @questions = @user.questions
   end
 end
