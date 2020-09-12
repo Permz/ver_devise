@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answers
   root "home#top"
   get "/" => "home#top"
   get "/about" => "home#about"
