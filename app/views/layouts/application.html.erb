@@ -31,16 +31,23 @@
               <%= link_to "質問", "/questions", class: "nav-link" %>
             <% end %>
           </li>
+          <li class="nav-item">
+            <% if user_signed_in? && current_user.role == '質問者' %>
+              <%= link_to "質問", "/questions", class: "nav-link" %>
+            <% elsif user_signed_in? && current_user.role == '回答者' %>
+                <%= link_to "回答", "/answers", class: "nav-link" %>
+            <% end %>
+          </li>
           <!--
           <li class="nav-item">
             <a class="nav-link" href="/qanda">Q&A</a>
           </li>
           -->
           <li class="nav-item">
-            <a class="nav-link" href="/#">News</a>
+            <a class="nav-link" href="#">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#">Techniques</a>
+            <a class="nav-link" href="#">Techniques</a>
           </li>
           <li class="nav-item">
             <% if user_signed_in? %>
@@ -49,6 +56,12 @@
               <%= link_to "ログイン", "/users/sign_in", class: "nav-link" %>
             <% end %>
           </li>
+          <% if user_signed_in? %>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "新規登録", "/users/sign_up", class: "nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
