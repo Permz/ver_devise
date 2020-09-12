@@ -16,7 +16,7 @@
 
   <body>
   <!-- ナビゲーションバー 始まり -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light g-nav sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-light g-nav sticky-top shadow-sm">
       <a class="navbar-brand" href="/"><img src="/favicon.ico" width="20px" alt="logo">CARE YOU</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,8 +27,15 @@
             <a class="nav-link" href="/about">About</a>
           </li>
           <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "質問", "/questions", class: "nav-link" %>
+            <% end %>
+          </li>
+          <!--
+          <li class="nav-item">
             <a class="nav-link" href="/qanda">Q&A</a>
           </li>
+          -->
           <li class="nav-item">
             <a class="nav-link" href="/#">News</a>
           </li>
@@ -36,10 +43,11 @@
             <a class="nav-link" href="/#">Techniques</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <% if user_signed_in? %>
+              <a><%= link_to "ログアウト", destroy_user_session_path, class: "nav-link", :method => :delete %></a>
+            <% else %>
+              <%= link_to "ログイン", "/users/sign_in", class: "nav-link" %>
+            <% end %>
           </li>
         </ul>
       </div>
@@ -48,14 +56,10 @@
   <!-- 本文 始まり -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%if user_signed_in? %>
-      <div class="container text-right">
-        <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
-      </div>
-    <%end%>
 
     <div class="container">
       <%= yield %>
+      <hr>
     </div>
   <!-- 本文 終わり -->
   <!-- script 導入 始まり -->
