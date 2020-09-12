@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :questions
   root "home#top"
   get "/" => "home#top"
   get "/about" => "home#about"
@@ -12,5 +11,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
 }
+
+  resources :questions
 
 end
