@@ -43,7 +43,7 @@ gem 'devise'
 
 gem 'rspec'
 gem 'rubocop'
-gem 'RspecJunitFormatter'
+gem 'rspec_junit_formatter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
