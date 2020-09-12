@@ -19,7 +19,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbar-header">
+      <div class="collapse navbar-collapse" id="navbar-header"> <!-- レスポンシブナビゲーションバー 始まり -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
@@ -34,19 +34,40 @@
             <a class="nav-link" href="/techs">Techniques</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users/sign_in">Login</a>
+            <a class="nav-link" href="/users/sign_in">Log in</a>
           </li>
+          <a class="nav-link" href="/users/sign_up">Sign in</a>
           <li class="nav-item">
             <a class="nav-link" href="/mng">管理</a>
           </li>
         </ul>
-      </div>
+      </div> <!-- レスポンシブナビゲーションバー 終わり -->
     </nav>
 <!-- ナビゲーションバー 終わり -->
 <!-- 本文 始まり -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
+      <div class="container">
+        <!--
+        <%= link_to "ゲストログイン（閲覧用）" %>
+        -->
+        <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+          <!-- ユーザーがログインしていた時の処理 -->
+          <div class="container text-right">
+            <h3> <%= current_user.name %> さんがログインしています </h3>
+            <h3> メールアドレス： <%= current_user.email %> </h3>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+          </div>
+        <% else %>
+          <!-- ユーザーがログインしていなかった時の処理 -->
+          <h3 class="text-right lead"> 現在ログインしていません </h3>
+          <div class="text-right">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+          </div>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
 <!-- 本文 終わり -->

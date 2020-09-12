@@ -1,23 +1,7 @@
 <h2>Q&A</h2>
-<!--
-<%= link_to "ゲストログイン（閲覧用）" %>
--->
-<% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
-  <!-- ユーザーがログインしていた時の処理 -->
-  <div class="container text-right">
-    <h3> <%= current_user.name %> さんがログインしています </h3>
-    <h3> メールアドレス： <%= current_user.email %> </h3>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-  </div>
-<% else %>
-  <!-- ユーザーがログインしていなかった時の処理 -->
-  <h3> 現在ログインしていません </h3>
-  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
-<% end %>
 
 <% @questions.each do |q| %>
   <hr>
-  <p><span>ユーザー名: </span><%=link_to question.user.name, user_path(question.user.id) %></p>
-  <p><span>質問内容: </span><%=link_to question.title, question_path(question.id) %></p>
+  <p><span>ユーザー名: </span><%=link_to q.user.name, user_path(q.user.id) %></p>
+  <p><span>質問内容: </span><%=link_to q.title, question_path(q.id) %></p>
 <% end %>

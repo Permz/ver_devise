@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/news" => "home#news"
   get "/login" => "users#sign_in"
   get "/mng" => "home#management"
+  get "/signup" => "users#sign_up"
   get 'users/index'
   get 'users/show'
 
