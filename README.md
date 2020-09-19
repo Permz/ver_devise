@@ -2,7 +2,7 @@
 
 * Ruby version: 2.5.1
 
-* System dependencies
+* System dependencies: 
 
 * Configuration
 
