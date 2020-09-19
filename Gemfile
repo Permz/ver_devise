@@ -45,6 +45,8 @@ gem 'devise'
 gem 'rubocop'
 gem 'rspec_junit_formatter'
 
+gem 'license_finder', :group => :development
+
 group :development, :test do
   gem 'rspec-rails'
 end
