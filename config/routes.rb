@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get "/qanda" => "home#qanda"
   get "/news" => "home#news"
   
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+  devise_for :users, skip: [:sessions]
+  as :user do
+    get 'signin', to: 'devise/sessions#new'
+    post 'signin', to: 'devise/sessions#create'
+    match 'signout', to: 'devise/sessions#destroy', via: Devise.mappings[:user].sign_out_via
   end
 
   devise_for :users, controllers: {
@@ -18,5 +21,6 @@ Rails.application.routes.draw do
 }
 
   resources :questions
+  resources :answers
 
 end
